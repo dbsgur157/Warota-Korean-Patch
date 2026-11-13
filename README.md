@@ -13,9 +13,13 @@
 | Steam Build ID | 26596664 |
 | 패치 버전 | 0.3.0.6 |
 
-[릴리스에서 한글패치 ZIP 다운로드](https://github.com/dbsgur157/Warota-Korean-Patch/releases/tag/v0.3.0.6-build26596664)
+[릴리스에서 한글패치 ZIP 다운로드](https://github.com/dbsgur157/Warota-Korean-Patch/releases/tag/v0.3.0.6-build26596664-r2)
 
 Assets에서 **Warota_KO_0.3.0.6_b26596664.zip**을 받으세요. GitHub가 자동 생성하는 Source code ZIP은 설치용 패치가 아닙니다.
+
+## 2026-11-13 설치기 개선 재배포
+
+`r2`는 배포본 구분으로 게임 버전·지원 Build ID는 동일합니다. Steam 라이브러리 자동 탐색과 경로 처리를 개선했습니다. 동봉 보고서 기준 자동 경로 테스트 20건, CMD 인수 전달 4건, 설치·복구 회귀 테스트 16건을 통과했습니다. 이는 실제 게임 플레이 검증이 아닙니다.
 
 ## 번역 범위와 검증 한계
 
@@ -34,7 +38,7 @@ Assets에서 **Warota_KO_0.3.0.6_b26596664.zip**을 받으세요. GitHub가 자�
 
 1. Steam에서 원본 게임을 설치하고 게임을 완전히 종료합니다.
 2. 다운로드한 ZIP을 빈 폴더에 **모두 압축 해제**합니다. 압축파일 안에서 실행하지 마세요.
-3. 기본 게임 폴더가 `D:\SteamLibrary\steamapps\common\WarotaDemonKingCastle`라면 `INSTALL.cmd`를 두 번 클릭합니다.
+3. `INSTALL.cmd`를 두 번 클릭합니다. Steam 등록 경로와 모든 등록 라이브러리에서 게임 설치 폴더를 자동으로 찾습니다. 중복 설치는 선택하며, 찾지 못하면 경로를 직접 입력합니다.
 4. `Install completed. The game was not launched.`가 표시되면 설치가 완료된 것입니다.
 5. 직접 게임을 실행한 뒤 언어에서 **한국어(기존 English 자리)**를 선택합니다.
 
@@ -42,9 +46,9 @@ Assets에서 **Warota_KO_0.3.0.6_b26596664.zip**을 받으세요. GitHub가 자�
 
 설치 도구는 Steam이나 게임을 자동으로 실행하지 않습니다. 별도 Python·Unity·번역 플러그인 설치는 필요하지 않습니다.
 
-### 게임 설치 폴더가 다른 경우
+### 자동 경로 탐색과 수동 경로 지정
 
-압축을 푼 폴더에서 PowerShell을 열고 다음 명령의 경로만 실제 게임 폴더로 바꾸세요.
+INSTALL.cmd·RESTORE.cmd·VERIFY.cmd 모두 자동 탐색을 사용합니다. 특정 드라이브에 설치할 필요가 없습니다. 수동 지정이 필요하면 압축을 푼 폴더에서 PowerShell을 열고 다음 명령의 경로만 실제 게임 폴더로 바꾸세요.
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Patch.ps1 -Mode Install -GamePath "게임 설치 폴더의 전체 경로"
@@ -68,7 +72,7 @@ Steam 빌드 또는 원본 파일 해시가 다르면 덮어쓰지 않고 중단
 
 ## 파일 확인
 
-- 파일 크기: 386,408,209 bytes
-- SHA-256: `F74401A186DF40BCF33406FC877987005452F9817E53FD90730129CF3EA0DECE`
+- 파일 크기: 386,411,278 bytes
+- SHA-256: `87BDDC3FE8833F211704D5EC13D0A8B7FE350AA99AE0D4482C1936E0E7027028`
 - 원본 게임이 별도로 필요합니다. 게임 및 관련 원본 저작물의 권리는 각 권리자에게 있습니다.
 - 포함 서체의 이용 조건은 ZIP의 `licenses` 폴더에서 확인하세요.
